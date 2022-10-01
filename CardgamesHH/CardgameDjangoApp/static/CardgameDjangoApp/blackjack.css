@@ -25,3 +25,30 @@ body{
     justify-content: center;
     font-family: dejavusans;
 }
+
+h1{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    margin:0;
+}
+
+.game_space{
+    background-color: rgb(107, 1, 1);
+    border-radius: 30px;
+    width: 150%;
+    justify-self: center;
+}
+
+.play_chips > form > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    font-size: 20px;
+}
+
+.play_chips{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
