@@ -59,8 +59,10 @@ class Chips:
         self.bet = 0  
     def win_bet(self):
         self.total += self.bet
+        print("You have ", self.total)
     def lose_bet(self):
         self.total -= self.bet
+        print("You have ", self.total)
 
 #GAME SETUP
 def main():
@@ -105,10 +107,12 @@ def main():
         
         if len(player_one.all_cards) == 0:
             print('Player One, out of cards! Player Two wins')
+            Chips.lose_bet(players_chips)
             game_on = False
             break
         if len(player_two.all_cards) == 0:
             print('Player Two, out of cards! Player One wins')
+            Chips.win_bet(players_chips)
             game_on = False
             break 
         
@@ -144,12 +148,14 @@ def main():
                 if len(player_one.all_cards) < 5:
                     print("Player One unable to declare war")
                     print("PLAYER TWO WINS!")
+                    Chips.lose_bet(players_chips)
                     game_on = False
                     break
                     
                 elif len(player_two.all_cards) < 5:
                     print("Player Two unable to declare war")
                     print("PLAYER ONE WINS!")
+                    Chips.win_bet(players_chips)
                     game_on = False
                     break
                     
@@ -162,3 +168,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

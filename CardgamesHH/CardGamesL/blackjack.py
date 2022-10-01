@@ -5,6 +5,7 @@ ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
 values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':10,
          'Queen':10, 'King':10, 'Ace':11}
 
+playing = True
 
 class Card:
     
@@ -46,7 +47,7 @@ class Hand:
             self.aces -= 1 
 
 class Chips:
-    def __init__(self,total=100):
+    def __init__(self,total=1000):
         self.total = total 
         self.bet = 0  
     def win_bet(self):
@@ -57,7 +58,7 @@ class Chips:
 
 def main():
 
-    playing = True
+    global playing
 
     def take_bet(chips): 
         while True:
@@ -76,16 +77,17 @@ def main():
         hand.adjust_for_ace()
 
     def hit_or_stand(deck,hand):
-        global playing 
+        global playing
         
         while True:
             x = input("Will you hit or stand? ").lower()
             
-            if x == 'hit':
+            if x[0] == 'h':
                 hit(deck,hand)
-            elif x == 'stand':
+            elif x[0] == 's':
                 print("Player standing. Dealer will play.")
                 playing = False
+                break
             else:
                 print("Please enter either hit or stand.")
                 continue
@@ -118,9 +120,12 @@ def main():
     def push(player,dealer):
         print("Tie! It's a push.")
 
+    players_chips = Chips()
+
     while True:
-        print("Blackjack will now begin. Get as close to 21 as you can without going over!\n\
-        Dealer hits until she reaches 17. Aces count as 1 or 11.\n  Players Chips: 100")
+
+        print(f"Blackjack will now begin. Get as close to 21 as you can without going over!\n\
+        Dealer hits until she reaches 17. Aces count as 1 or 11.\n  Players Chips: {players_chips.total}")
         
         deck = Deck()
         deck.shuffle()
@@ -132,8 +137,6 @@ def main():
         dealer_hand = Hand()
         dealer_hand.add_card(deck.deal())
         dealer_hand.add_card(deck.deal())
-            
-        players_chips = Chips()
         
         take_bet(players_chips)
         
@@ -143,7 +146,7 @@ def main():
             hit_or_stand(deck,player_hand)
             
             show_some(player_hand,dealer_hand)
-    
+            
             if player_hand.value > 21:
                 player_busts(player_hand,dealer_hand,players_chips)
                 break
