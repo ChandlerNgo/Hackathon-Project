@@ -58,7 +58,7 @@ class Chips:
 
 def main():
 
-    playing = True
+    global playing
 
     def take_bet(chips): 
         while True:
@@ -78,7 +78,6 @@ def main():
 
     def hit_or_stand(deck,hand):
         global playing
-        
         
         while True:
             x = input("Will you hit or stand? ").lower()
