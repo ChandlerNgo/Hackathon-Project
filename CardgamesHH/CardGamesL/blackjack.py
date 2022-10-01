@@ -1,3 +1,9 @@
+# take bet: number
+# hit or stand buttons
+# play another hand, yes or no buttons
+# current amount of chips
+# 
+
 import random
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
