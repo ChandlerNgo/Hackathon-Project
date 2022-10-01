@@ -1,1 +1,21 @@
-<h1>this is the blackjack game</h1>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'CardgameDjangoApp/blackjack.css' %}">
+        <link href="{% static 'fonts/DejaVuSans.ttf' %}" rel="stylesheet" media="screen">
+        <title>BlackJack Game</title>
+    </head>
+    <body>
+        <h1>Dealer: Chandler, Sami, Laith, Dhruv</h1>
+        <div id="hit_stand">
+            <form>
+                <button type="submit" value="hit">Hit</button>
+            </form>
+            <p>or</p>
+            <form>
+                <button type="submit" value="stand">Stand</button>
+            </form>
+        </div>
+
+    </body>
+</html>

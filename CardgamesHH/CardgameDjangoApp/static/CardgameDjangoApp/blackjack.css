@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'dejavusans';
+    src: local('dejavusans'),
+         url('../static/fonts/DejaVuSans.ttf') format("truetype");
+  }
+
+#hit_stand{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+button{
+    width:90px;
+    height:50px;
+    font-size: 25px;
+    border-style: none;
+    border-radius: 20px;
+}
+
+
+body{
+    display:grid;
+    justify-content: center;
+    font-family: dejavusans;
+}
