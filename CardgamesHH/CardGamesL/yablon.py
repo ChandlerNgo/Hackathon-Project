@@ -62,3 +62,73 @@ class Chips:
     def lose_bet(self):
         self.total -= self.bet
         print(f"You have {self.total} chips")
+
+def main():
+    player_one = Player("One")
+
+    player_one.chips = Chips()
+
+    deck = Deck()
+    deck.shuffle()
+
+    global playing
+
+    def take_bet(chips): 
+        while True:
+            try:
+                chips.bet = int(input("Please enter the amount you would like to bet: "))
+            except ValueError:
+                print("Please enter an integer")
+            else:
+                if chips.bet > chips.total:
+                    print("You do not have enough chips")
+                else:
+                    break
+
+    while True:
+        take_bet(player_one.chips)
+        dealt_card1 = deck.deal_one()
+        dealt_card2 = deck.deal_one()
+        print(f'Dealt Card 1: {dealt_card1}')
+        print(f'Dealt Card 2: {dealt_card2}')
+        if dealt_card1.value() - 1 == dealt_card2.value() or dealt_card1.value() + 1 == dealt_card2.value():
+            print("It's a Push!")
+            break
+        elif dealt_card1.value() == dealt_card2.value():
+            dealt_card3 = deck.deal_one()
+            print('Dealt Card 3: {dealt_card3}')
+            if dealt_card1.value() != dealt_card3.value():
+                print("It's a Push!")
+                break
+            else:
+                player_one.chips *= 11
+        else:
+            guess = input('Will the third card be in between the two cards? ').lower()
+            dual_bet = input('Do you want to double down? ').lower()
+            if dual_bet[0] == 'y':
+                player_one.chips.bet *= 2
+            third_card = deck.deal_one()
+            difference = abs(dealt_card2.value() - dealt_card1.value())
+            if guess[0] == 'y':
+                if third_card.value() > dealt_card1.value() and third_card.value() < dealt_card2.value():
+                    print('You Win!')
+
+                    player_one.chips.win_bet()
+                else:
+                    print('You Lose!')
+
+                    player_one.chips.lose_bet()
+            else:
+                if third_card.value() < dealt_card1.value() and third_card.value() > dealt_card2.value():
+                    print('You Win!')
+
+                    player_one.chips.win_bet()
+                else:
+                    print('You Lose!')
+                    
+                    player_one.chips.lose_bet()
+            break
+
+
+if __name__ == '__main__':
+    main()
