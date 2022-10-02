@@ -24,6 +24,7 @@ def blackjack(request):
             player_hands = []
             for i in player_cards:
                 player_hands.append(f"../static/CardgameDjangoApp/images/cards/{i}.png")
+                # Check to see if the player busts
             parameters = {
                 "current_card":current_card,
                 "chips":request.session['chips'],

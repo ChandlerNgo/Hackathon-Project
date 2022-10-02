@@ -84,6 +84,10 @@ def main():
         hand.add_card(deck.deal())
         hand.adjust_for_ace()
 
+    def hit():
+        player_hand.add_card(deck.deal())
+        player_hand.adjust_for_ace()
+
     def hit_or_stand(deck,hand):
         global playing
         
