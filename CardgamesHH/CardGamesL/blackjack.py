@@ -125,6 +125,10 @@ def main():
         chips.lose_bet()
     def push(player,dealer):
         print("Tie! It's a push.")
+    def getDeck():
+        return deck
+    def getPlayerHand():
+        return player_hand
 
     players_chips = Chips()
 
