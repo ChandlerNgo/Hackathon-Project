@@ -1,4 +1,4 @@
-from Hackathon-Project.CardgamesHH.CardGamesL.blackjack import Deck
+from CardGamesL import Deck
 from django.shortcuts import render
 from CardGamesL import blackjack
 
