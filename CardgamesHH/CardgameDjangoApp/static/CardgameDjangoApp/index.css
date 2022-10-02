@@ -49,3 +49,17 @@ html{
     background-color: rgb(201, 201, 201);
     display:flex;
 }
+
+.webName{
+    text-align:center;
+    background-color: white;
+    left: 25%;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    border-style: solid;
+    font-size: 300%;
+}
