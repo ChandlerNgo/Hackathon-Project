@@ -137,3 +137,8 @@ h1{
     display:grid;
     align-items: center;
 }
+
+.cards{
+    width:67px;
+    height:120px;
+}

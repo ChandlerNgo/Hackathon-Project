@@ -40,7 +40,9 @@
                 <h1>dealer chips</h1>
                 <h1>dealer cards</h1>
 
-                <h1>player cards</h1>
+                {% for i in player_cards %}
+                    <img class="cards" src={{i}}>
+                {% endfor %}
                 <h1>{{chips}}</h1>
                 <div class="play_chips">
                     <form method="POST">
