@@ -4,7 +4,6 @@ def index(request):
     return render(request,"index.html")
 
 def blackjack(request):
-    dealer = "Sami, Chandler, Laith, Dhruv"
     current_card = "7 of Hearts"
     chips = request.session.get('chips', 0)
     if request.method == 'POST':
@@ -19,7 +18,6 @@ def blackjack(request):
         elif request.POST.get("100_chip"):  # You can use else in here too if there is only 2 submit types.
             request.session['chips'] = chips + 100
     parameters = {
-        "dealer":dealer,
         "current_card":current_card,
         "chips":chips
     }
