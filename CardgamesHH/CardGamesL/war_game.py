@@ -103,6 +103,9 @@ def main():
         
         round_num += 1
         print(f"Round {round_num}")
+        # Showing the number of player's cards
+        print(f"Player 1's Cards: {len(player_one.all_cards)}")
+        print(f"Player 2's Cards: {len(player_two.all_cards)}")
         
         if len(player_one.all_cards) == 0:
             print('Player One, out of cards! Player Two wins')
@@ -121,7 +124,8 @@ def main():
         player_two_cards = []
         player_two_cards.append(player_two.remove_one())
         
-        
+        print(f"Player 1's Card: {player_one_cards[0]}")
+        print(f"Player 2's Card: {player_two_cards[0]}")
         
         at_war = True
         
