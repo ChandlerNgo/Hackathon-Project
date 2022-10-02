@@ -19,7 +19,7 @@ def blackjack(request):
         elif request.POST.get("100_chip"):  # You can use else in here too if there is only 2 submit types.
             chips += 100
         elif request.POST.get("hit"):
-            blackjack.hit()
+            blackjack.hit(blackjack.deck, blackjack.playerHand)
             player_cards = blackjack.getPlayerHand()
             player_hands = []
             for i in player_cards:
