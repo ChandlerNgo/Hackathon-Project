@@ -41,6 +41,9 @@ class Deck:
         single_card = self.deck.pop()
         return single_card
 
+deck = Deck()
+deck.shuffle()
+
 class Hand:
     def __init__(self):
         self.cards = []  
@@ -54,6 +57,14 @@ class Hand:
             self.value -= 10
             self.aces -= 1 
 
+player_hand = Hand()
+player_hand.add_card(deck.deal())
+player_hand.add_card(deck.deal())
+
+dealer_hand = Hand()
+dealer_hand.add_card(deck.deal())
+dealer_hand.add_card(deck.deal())
+
 class Chips:
     def __init__(self,total=1000):
         self.total = total 
@@ -63,30 +74,35 @@ class Chips:
     def lose_bet(self):
         self.total -= self.bet
 
+players_chips = Chips()
+
+def hit(deck,hand):
+    hand.add_card(deck.deal())
+    hand.adjust_for_ace()
+
+def take_bet(chips): 
+    while True:
+        try:
+            chips.bet = int(input("Please enter the amount you would like to bet: "))
+        except ValueError:
+            print("Please enter an integer")
+        else:
+            if chips.bet > chips.total:
+                print("You do not have enough chips")
+            else:
+                break
+take_bet(players_chips)
+
+def getDeck():
+    return deck
+def getPlayerHand():
+    return player_hand
+def getPlayerChips():
+    return players_chips.bet
 
 def main():
 
     global playing
-
-    def take_bet(chips): 
-        while True:
-            try:
-                chips.bet = int(input("Please enter the amount you would like to bet: "))
-            except ValueError:
-                print("Please enter an integer")
-            else:
-                if chips.bet > chips.total:
-                    print("You do not have enough chips")
-                else:
-                    break
-
-    def hit(deck,hand):
-        hand.add_card(deck.deal())
-        hand.adjust_for_ace()
-
-    def hit():
-        player_hand.add_card(deck.deal())
-        player_hand.adjust_for_ace()
 
     def hit_or_stand(deck,hand):
         global playing
@@ -131,32 +147,11 @@ def main():
         chips.lose_bet()
     def push(player,dealer):
         print("Tie! It's a push.")
-    def getDeck():
-        return deck
-    def getPlayerHand():
-        return player_hand
-    def getPlayerChips():
-        return players_chips.bet
-
-    players_chips = Chips()
 
     while True:
 
         print(f"Blackjack will now begin. Get as close to 21 as you can without going over!\n\
         Dealer hits until she reaches 17. Aces count as 1 or 11.\n  Players Chips: {players_chips.total}")
-        
-        deck = Deck()
-        deck.shuffle()
-        
-        player_hand = Hand()
-        player_hand.add_card(deck.deal())
-        player_hand.add_card(deck.deal())
-        
-        dealer_hand = Hand()
-        dealer_hand.add_card(deck.deal())
-        dealer_hand.add_card(deck.deal())
-        
-        take_bet(players_chips)
         
         show_some(player_hand,dealer_hand)
         
