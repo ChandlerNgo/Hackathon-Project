@@ -1,4 +1,6 @@
+from Hackathon-Project.CardgamesHH.CardGamesL.blackjack import Deck
 from django.shortcuts import render
+from CardGamesL import blackjack
 
 def index(request):
     return render(request,"index.html")
@@ -17,6 +19,8 @@ def blackjack(request):
             chips += 50
         elif request.POST.get("100_chip"):  # You can use else in here too if there is only 2 submit types.
             chips += 100
+        elif request.POST.get("hit"):
+            blackjack.hit(blackjack.getDeck(),blackjack.getPlayerHand())
         else:
             chips = 0
         request.session['chips'] = chips

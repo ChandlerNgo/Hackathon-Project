@@ -135,6 +135,9 @@ def main():
         print(f"Player 1's Card: {player_one_cards[0]}")
         print(f"Player 2's Card: {player_two_cards[0]}")
         
+        war_button = input("Declare War!")
+        multiplier = int(input("5x, 10x, or 15x?"))
+        
         at_war = True
         
         while at_war:
@@ -156,14 +159,14 @@ def main():
             else:
                 print("WAR!")
                 
-                if len(player_one.all_cards) < 5:
+                if len(player_one.all_cards) < multiplier:
                     print("Player One unable to declare war")
                     print("PLAYER TWO WINS!")
                     Chips.lose_bet(players_chips)
                     game_on = False
                     break
                     
-                elif len(player_two.all_cards) < 5:
+                elif len(player_two.all_cards) < multiplier:
                     print("Player Two unable to declare war")
                     print("PLAYER ONE WINS!")
                     Chips.win_bet(players_chips)
@@ -171,7 +174,7 @@ def main():
                     break
                     
                 else:
-                    for num in range(5):
+                    for num in range(multiplier):
                         player_one_cards.append(player_one.remove_one())
                         player_two_cards.append(player_two.remove_one())
 
