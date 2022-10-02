@@ -8,6 +8,8 @@ body{
     margin:0;
     padding:0;
     font-family: dejavusans;
+    background-image: url(../CardgameDjangoApp/images/maroonMap.png);
+    background-size: cover;
 }
 
 html{
@@ -103,7 +105,6 @@ h1{
 .chip_1{
     background-image: url(../CardgameDjangoApp/images/poker_chips/1-chip.png);
     background-size: 50px 50px;
-<<<<<<< HEAD
 }
 
 .chip_5{
@@ -124,6 +125,9 @@ h1{
 .chip_100{
     background-image: url(../CardgameDjangoApp/images/poker_chips/100-chip.png);
     background-size: 50px 50px;
-=======
->>>>>>> 9be5aaa6c6700ce574303131e53ef93a452e9abb
+}
+
+.reset{
+    background-image: url(../CardgameDjangoApp/images/reset\ button.png);
+    background-size: 50px 50px;
 }
