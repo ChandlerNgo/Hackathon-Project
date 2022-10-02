@@ -27,7 +27,8 @@
         </div>
         <h1>Dealer</h1>
         <div id="hit_stand">
-            <form>
+            <form method="POST">
+                {% csrf_token %}
                 <button name="hit" type="submit" value="hit">Hit</button>
             </form>
             <p>or</p>
@@ -59,6 +60,7 @@
         </div>
         <div class="player_chips">
             {{player_chips}}
+            {{current_card}}
         </div>
     </body>
 </html>
