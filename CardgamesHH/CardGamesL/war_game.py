@@ -1,3 +1,11 @@
+# amount of cards: len of list of cards
+# war button
+# inital betting amount
+# current card they have
+
+
+
+
 import random
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -58,10 +66,10 @@ class Chips:
         self.bet = 0  
     def win_bet(self):
         self.total += self.bet
-        print("You have ", self.total)
+        print(f"You have {self.total} chips")
     def lose_bet(self):
         self.total -= self.bet
-        print("You have ", self.total)
+        print(f"You have {self.total} chips")
 
 #GAME SETUP
 def main():

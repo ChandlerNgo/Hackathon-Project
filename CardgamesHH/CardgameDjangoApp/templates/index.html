@@ -1,14 +1,29 @@
 <html>
     <head>
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'CardgameDjangoApp/blackjack.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'CardgameDjangoApp/index.css' %}">
 
     </head>
     <body>
+        <div class="navbar">
+            <div class="navbox">
+                <form action="{% url 'index' %}">
+                    <button class="button" type="submit" value="index">Home</button>
+                </form>
+                <form action="{% url 'blackjack' %}">
+                    <button class="button" type="submit" value="blackjack">Blackjack</button>
+                </form>
+                <form action="{% url 'war' %}">
+                    <button class="button" type="submit" value="war">War</button>
+                </form>
+                <form action="{% url 'texasholdem' %}">
+                    <button class="button" type="submit" value="texasholdem">Texas Hold 'em</button>
+                </form>
+            </div>
+            <div class="team_name">
+                <h1>Cyber Bot Demonz</h1>
+            </div>
+        </div>
         <h1>this is a django app</h1>
-        <form action="{% url 'blackjack' %}">
-            <button type="submit" value="blackjack">Blackjack</button>
-        </form>
-        
     </body>
 </html>
