@@ -131,6 +131,8 @@ def main():
         return deck
     def getPlayerHand():
         return player_hand
+    def getPlayerChips():
+        return players_chips.bet
 
     players_chips = Chips()
 
