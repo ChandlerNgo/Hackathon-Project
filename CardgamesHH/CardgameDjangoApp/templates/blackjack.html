@@ -41,21 +41,14 @@
                 <h1>dealer cards</h1>
 
                 <h1>player cards</h1>
-                <h1>chips for the bet rn</h1>
+                <h1>{{chips}}</h1>
                 <div class="play_chips">
-                    <form>
-                        <button class="1_chip" type="submit" value="1">1</button>
-                    </form>
-                    <form>
-                        <button class="5_chip" type="submit" value="5">5</button>
-                    </form>
-                    <form>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button name="1_chip" class="1_chip" type="submit" value="1">1</button>
+                        <button name="5_chip" class="5_chip" type="submit" value="5">5</button>
                         <button class="10_chip" type="submit" value="10">10</button>
-                    </form>
-                    <form>
                         <button class="50_chip" type="submit" value="50">50</button>
-                    </form>
-                    <form>
                         <button class="100_chip" type="submit" value="100">100</button>
                     </form>
                 </div>
