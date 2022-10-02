@@ -103,6 +103,7 @@ h1{
 .chip_1{
     background-image: url(../CardgameDjangoApp/images/poker_chips/1-chip.png);
     background-size: 50px 50px;
+<<<<<<< HEAD
 }
 
 .chip_5{
@@ -123,4 +124,6 @@ h1{
 .chip_100{
     background-image: url(../CardgameDjangoApp/images/poker_chips/100-chip.png);
     background-size: 50px 50px;
+=======
+>>>>>>> 9be5aaa6c6700ce574303131e53ef93a452e9abb
 }

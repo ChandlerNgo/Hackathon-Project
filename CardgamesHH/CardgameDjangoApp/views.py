@@ -8,18 +8,21 @@ def blackjack(request):
     chips = request.session.get('chips', 0)
     if request.method == 'POST':
         if request.POST.get("1_chip"):
-            request.session['chips'] = chips + 1
+            chips += 1
         elif request.POST.get("5_chip"):  # You can use else in here too if there is only 2 submit types.
-            request.session['chips'] = chips + 5
+            chips += 5
         elif request.POST.get("10_chip"):  # You can use else in here too if there is only 2 submit types.
-            request.session['chips'] = chips + 10
+            chips += 10
         elif request.POST.get("50_chip"):  # You can use else in here too if there is only 2 submit types.
-            request.session['chips'] = chips + 50
+            chips += 50
         elif request.POST.get("100_chip"):  # You can use else in here too if there is only 2 submit types.
-            request.session['chips'] = chips + 100
+            chips += 100
+        else:
+            chips = 0
+        request.session['chips'] = chips
     parameters = {
         "current_card":current_card,
-        "chips":chips
+        "chips":request.session['chips']
     }
     return render(request, "blackjack.html",parameters)
 
