@@ -91,7 +91,6 @@ def take_bet(chips):
                 print("You do not have enough chips")
             else:
                 break
-take_bet(players_chips)
 
 def getDeck():
     return deck
