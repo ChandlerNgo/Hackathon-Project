@@ -20,13 +20,22 @@ def blackjack(request):
             chips += 100
         elif request.POST.get("hit"):
             blackjack.hit(blackjack.getDeck(),blackjack.getPlayerHand())
+            player_cards = blackjack.getPlayerHand()
+            player_hands = []
+            for i in player_cards:
+                player_hands.append(f"../static/CardgameDjangoApp/images/cards/{i}.png")
+            parameters = {
+                "current_card":current_card,
+                "chips":request.session['chips'],
+                "player_cards":player_hands
+            }
+            return render(request, "blackjack.html",parameters)
         else:
             chips = 0
         request.session['chips'] = chips
     parameters = {
         "current_card":current_card,
         "chips":request.session['chips'],
-        "player_cards":["../static/CardgameDjangoApp/images/cards/Clovers/2-clover.png","../static/CardgameDjangoApp/images/cards/Clovers/3-clover.png"]
     }
     return render(request, "blackjack.html",parameters)
 
