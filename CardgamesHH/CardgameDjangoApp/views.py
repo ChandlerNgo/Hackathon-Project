@@ -1,6 +1,5 @@
-from CardGamesL import Deck
 from django.shortcuts import render
-from CardGamesL import blackjack
+from CardGamesL.blackjack import Deck
 
 def index(request):
     return render(request,"index.html")
