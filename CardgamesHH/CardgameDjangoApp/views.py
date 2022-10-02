@@ -22,7 +22,8 @@ def blackjack(request):
         request.session['chips'] = chips
     parameters = {
         "current_card":current_card,
-        "chips":request.session['chips']
+        "chips":request.session['chips'],
+        "player_cards":["../static/CardgameDjangoApp/images/cards/Clovers/2-clover.png","../static/CardgameDjangoApp/images/cards/Clovers/3-clover.png"]
     }
     return render(request, "blackjack.html",parameters)
 
