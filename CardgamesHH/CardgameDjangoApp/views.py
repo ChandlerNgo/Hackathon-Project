@@ -29,7 +29,8 @@ def blackjack(request):
             suit = random.choice(suits)
             rank = random.choice(ranks)
             rank = pic[rank]
-            suit = suit.lower()
+            if rank in ("J","Q","K","A"):
+                rank = rank.lower()
             player_cards.append(f"{rank}-{suit}")
             player_hands = []
             for i in player_cards:
