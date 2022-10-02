@@ -29,8 +29,8 @@ def blackjack(request):
 def poker(request):
     return render(request, "poker.html")
 
-def texasholdem(request):
-    return render(request, "texasholdem.html")
+def yablon(request):
+    return render(request, "yablon.html")
 
 def war(request):
     return render(request, "war.html")
