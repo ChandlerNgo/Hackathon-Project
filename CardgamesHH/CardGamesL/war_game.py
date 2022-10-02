@@ -136,7 +136,7 @@ def main():
         print(f"Player 2's Card: {player_two_cards[0]}")
         
         war_button = input("Declare War!")
-        multiplier = int(input("5x, 10x, or 15x?"))
+        multiplier = int(input("1x, 5x, or 10x?"))
         
         at_war = True
         
