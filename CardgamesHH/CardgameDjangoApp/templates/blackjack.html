@@ -32,18 +32,41 @@
             </form>
             <p>or</p>
             <form>
-                <button type="submit" value="stand">Stand</button>
+                <button name="stand" type="submit" value="stand">Stand</button>
             </form>
         </div>
         <div class="centeringbox">
             <div class="game_space">
-                <h1>dealer chips</h1>
-                <h1>dealer cards</h1>
+                         
+                <div class="container"
+                    style="
 
-                {% for i in player_cards %}
-                    <img class="cards" src={{i}}>
-                {% endfor %}
-                <h1>{{chips}}</h1>
+                    margin-top: 110px;
+                    
+                    margin-bottom: 20px;">
+
+                    {% for i in dealer_cards %}
+                        <img class="cards" src={{i}}>
+                    {% endfor %}
+                </div>
+                <div class="container">
+                    {% for i in player_cards %}
+                        <img class="cards" src={{i}}>
+                    {% endfor %}
+                </div>
+                   
+                <h1
+                    style="
+
+                    margin-top: 90px;
+                    
+                    margin-bottom: 20px;
+                    
+                    font-size: 250%;
+
+                    text-align: center;">
+                    {{chips}}
+                </h1>
                 <div class="play_chips">
                     <form method="POST">
                         {% csrf_token %}

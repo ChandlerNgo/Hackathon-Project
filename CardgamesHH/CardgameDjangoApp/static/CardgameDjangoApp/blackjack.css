@@ -85,8 +85,8 @@ h1{
 }
 
 .play_chips > form > button {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 100px;
     font-size: 20px;
     background-color: rgb(107, 1, 1);
@@ -105,32 +105,50 @@ h1{
 
 .chip_1{
     background-image: url(../CardgameDjangoApp/images/poker_chips/1-chip.png);
-    background-size: 50px 50px;
+    background-size: 80px 80px;
+    position: fixed;
+    top: 70%;
+    left: 35%;
 }
 
 .chip_5{
     background-image: url(../CardgameDjangoApp/images/poker_chips/5-chip.png);
-    background-size: 50px 50px;
+    background-size: 80px 80px;
+    position: fixed;
+    top: 70%;
+    left: 40%;
 }
 
 .chip_25{
     background-image: url(../CardgameDjangoApp/images/poker_chips/25-chip.png);
-    background-size: 50px 50px; 
+    background-size: 80px 80px; 
+    position: fixed;
+    top: 70%;
+    left: 45%;
 }
 
 .chip_50{
     background-image: url(../CardgameDjangoApp/images/poker_chips/50-chip.png);
-    background-size: 50px 50px;
+    background-size: 80px 80px;
+    position: fixed;
+    top: 70%;
+    left: 50%;
 }
 
 .chip_100{
     background-image: url(../CardgameDjangoApp/images/poker_chips/100-chip.png);
-    background-size: 50px 50px;
+    background-size: 80px 80px;
+    position: fixed;
+    top: 70%;
+    left: 55%;
 }
 
 .reset{
     background-image: url(../CardgameDjangoApp/images/reset\ button.png);
-    background-size: 50px 50px;
+    background-size: 80px 80px;
+    position: fixed;
+    top: 70%;
+    left: 60%;
 }
 
 .team_name{
@@ -141,4 +159,13 @@ h1{
 .cards{
     width:67px;
     height:120px;
+    border-style: solid;
+    display: inline-block;
+    top: 30%;
+    
+}
+
+.container{
+    display:flex;
+    justify-content: center;
 }
