@@ -102,5 +102,25 @@ h1{
 
 .chip_1{
     background-image: url(../CardgameDjangoApp/images/poker_chips/1-chip.png);
-    background-size: 80px 80px;
+    background-size: 50px 50px;
+}
+
+.chip_5{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/5-chip.png);
+    background-size: 50px 50px;
+}
+
+.chip_25{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/25-chip.png);
+    background-size: 50px 50px; 
+}
+
+.chip_50{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/50-chip.png);
+    background-size: 50px 50px;
+}
+
+.chip_100{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/100-chip.png);
+    background-size: 50px 50px;
 }
