@@ -8,6 +8,8 @@ body{
     margin:0;
     padding:0;
     font-family: dejavusans;
+    background-image: url(../CardgameDjangoApp/images/maroonMap.png);
+    background-size: cover;
 }
 
 html{
@@ -77,8 +79,9 @@ h1{
 
 .game_space{
     background-color: rgb(107, 1, 1);
-    border-radius: 30px;
+    border-radius: 50%;
     width: 80%;
+    height:70vh;
 }
 
 .play_chips > form > button {
@@ -103,4 +106,34 @@ h1{
 .chip_1{
     background-image: url(../CardgameDjangoApp/images/poker_chips/1-chip.png);
     background-size: 50px 50px;
+}
+
+.chip_5{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/5-chip.png);
+    background-size: 50px 50px;
+}
+
+.chip_25{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/25-chip.png);
+    background-size: 50px 50px; 
+}
+
+.chip_50{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/50-chip.png);
+    background-size: 50px 50px;
+}
+
+.chip_100{
+    background-image: url(../CardgameDjangoApp/images/poker_chips/100-chip.png);
+    background-size: 50px 50px;
+}
+
+.reset{
+    background-image: url(../CardgameDjangoApp/images/reset\ button.png);
+    background-size: 50px 50px;
+}
+
+.team_name{
+    display:grid;
+    align-items: center;
 }
