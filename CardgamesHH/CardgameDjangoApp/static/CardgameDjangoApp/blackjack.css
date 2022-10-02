@@ -79,8 +79,9 @@ h1{
 
 .game_space{
     background-color: rgb(107, 1, 1);
-    border-radius: 30px;
+    border-radius: 50%;
     width: 80%;
+    height:70vh;
 }
 
 .play_chips > form > button {
