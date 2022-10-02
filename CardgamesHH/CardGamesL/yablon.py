@@ -87,7 +87,7 @@ def main():
 
     while True:
 
-        print(f"Yablon will now begin.\nPlayers Chips: {player_one.chips} chips")
+        print(f"Yablon will now begin.\nPlayers Chips: {player_one.chips.total} chips")
 
         take_bet(player_one.chips)
 
@@ -147,7 +147,7 @@ def main():
         
         print("\nPlayers chips total:", player_one.chips.total)
         
-        new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
+        new_game = input("Would you like to play another round? Enter 'y' or 'n' ")
         
         if new_game[0].lower()=='y':
             playing = True

@@ -97,10 +97,9 @@ def main():
                 else:
                     break
 
-
-    print("War will now begin.\nPlayers Chips: 100")   
-    
     players_chips = Chips()
+
+    print(f"War will now begin.\nPlayers Chips: {players_chips.total} chips")   
         
     take_bet(players_chips)
 
@@ -176,16 +175,14 @@ def main():
                         player_one_cards.append(player_one.remove_one())
                         player_two_cards.append(player_two.remove_one())
 
-        print("\nPlayers chips total:", players_chips.total)
+    print("\nPlayers chips total:", players_chips.total)
         
-        new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
+    new_game = input("Would you like to play another game? Enter 'y' or 'n' ")
         
-        if new_game[0].lower()=='y':
-            playing = True
-            continue
-        else:
-            print("Thanks for playing!")
-            break
+    if new_game[0].lower()=='y':
+        game_on = True
+    else:
+        print("Thanks for playing!")
             
 
 
