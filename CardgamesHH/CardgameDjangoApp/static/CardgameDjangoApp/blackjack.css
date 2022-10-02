@@ -132,3 +132,8 @@ h1{
     background-image: url(../CardgameDjangoApp/images/reset\ button.png);
     background-size: 50px 50px;
 }
+
+.team_name{
+    display:grid;
+    align-items: center;
+}
