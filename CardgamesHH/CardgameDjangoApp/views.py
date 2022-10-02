@@ -47,7 +47,6 @@ def blackjack(request):
             request.session["current_card"] = current_card
             chips = request.session["chips"]
             parameters = {
-                "current_card":chips,
                 "chips":chips,
                 "player_cards":current_card
             }
@@ -57,7 +56,6 @@ def blackjack(request):
             request.session["current_card"] = []
         request.session['chips'] = chips
     parameters = {
-        "current_card":current_card,
         "chips":request.session['chips'],
     }
     return render(request, "blackjack.html",parameters)
