@@ -86,18 +86,23 @@ def main():
                     break
 
     while True:
+
+        print(f"Yablon will now begin.\nPlayers Chips: {player_one.chips.total} chips")
+
         take_bet(player_one.chips)
+
         dealt_card1 = deck.deal_one()
         dealt_card2 = deck.deal_one()
         print(f'Dealt Card 1: {dealt_card1}')
         print(f'Dealt Card 2: {dealt_card2}')
-        if dealt_card1.value() - 1 == dealt_card2.value() or dealt_card1.value() + 1 == dealt_card2.value():
+
+        if dealt_card1.value - 1 == dealt_card2.value or dealt_card1.value + 1 == dealt_card2.value:
             print("It's a Push!")
             break
-        elif dealt_card1.value() == dealt_card2.value():
+        elif dealt_card1.value == dealt_card2.value:
             dealt_card3 = deck.deal_one()
             print('Dealt Card 3: {dealt_card3}')
-            if dealt_card1.value() != dealt_card3.value():
+            if dealt_card1.value != dealt_card3.value:
                 print("It's a Push!")
                 break
             else:
@@ -105,21 +110,33 @@ def main():
         else:
             guess = input('Will the third card be in between the two cards? ').lower()
             dual_bet = input('Do you want to double down? ').lower()
+
             if dual_bet[0] == 'y':
                 player_one.chips.bet *= 2
+                
             third_card = deck.deal_one()
-            difference = abs(dealt_card2.value() - dealt_card1.value())
-            if guess[0] == 'y':
-                if third_card.value() > dealt_card1.value() and third_card.value() < dealt_card2.value():
-                    print('You Win!')
+            diff = abs(dealt_card2.value - dealt_card1.value)
 
-                    player_one.chips.win_bet()
+            if guess[0] == 'y':
+                if third_card.value in range(dealt_card1.value,dealt_card2.value+1) or third_card.value in range(dealt_card2.value,dealt_card1.value+1):
+                    print('You Win!')
+                    if diff == 1:
+                        player_one.chips.bet *= 5
+                        player_one.chips.win_bet()
+                    elif diff == 2:
+                        player_one.chips.bet *= 4
+                        player_one.chips.win_bet()
+                    elif diff == 3:
+                        player_one.chips.bet *= 2
+                        player_one.chips.win_bet()
+                    else:
+                        player_one.chips.win_bet()
                 else:
                     print('You Lose!')
 
                     player_one.chips.lose_bet()
             else:
-                if third_card.value() < dealt_card1.value() and third_card.value() > dealt_card2.value():
+                if not third_card.value in range(dealt_card1.value,dealt_card2.value+1) or not third_card.value in range(dealt_card2.value,dealt_card1.value+1):
                     print('You Win!')
 
                     player_one.chips.win_bet()
@@ -127,6 +144,16 @@ def main():
                     print('You Lose!')
                     
                     player_one.chips.lose_bet()
+        
+        print("\nPlayers chips total:", player_one.chips.total)
+        
+        new_game = input("Would you like to play another round? Enter 'y' or 'n' ")
+        
+        if new_game[0].lower()=='y':
+            playing = True
+            continue
+        else:
+            print("Thanks for playing!")
             break
 
 
