@@ -28,7 +28,6 @@ class Deck:
                 self.all_cards.append(created_card)
                 
     def shuffle(self):
-        
         random.shuffle(self.all_cards)
         
     def deal_one(self):
