@@ -1,9 +1,10 @@
 # amount of cards: len of list of cards
+    #len(player_one.all_cards)
+    #len(player_two.all_cards)
 # war button
 # inital betting amount
+    #Players Chips
 # current card they have
-
-
 
 
 import random
