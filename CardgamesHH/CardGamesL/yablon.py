@@ -84,6 +84,14 @@ def main():
                     print("You do not have enough chips")
                 else:
                     break
+    def getChips():
+        return player_one.chips
+    def getDealtCardOne():
+        return dealt_card1
+    def getDealtCardTwo():
+        return dealt_card2
+    def getDealtCardThree():
+        return dealt_card3
 
     while True:
 

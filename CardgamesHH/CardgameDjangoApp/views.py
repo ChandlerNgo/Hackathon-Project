@@ -19,14 +19,24 @@ def blackjack(request):
         elif request.POST.get("100_chip"):  # You can use else in here too if there is only 2 submit types.
             chips += 100
         elif request.POST.get("hit"):
-            blackjack.hit(blackjack.getDeck(),blackjack.getPlayerHand())
+            blackjack.hit()
+            player_cards = blackjack.getPlayerHand()
+            player_hands = []
+            for i in player_cards:
+                player_hands.append(f"../static/CardgameDjangoApp/images/cards/{i}.png")
+                # Check to see if the player busts
+            parameters = {
+                "current_card":current_card,
+                "chips":request.session['chips'],
+                "player_cards":player_hands
+            }
+            return render(request, "blackjack.html",parameters)
         else:
             chips = 0
         request.session['chips'] = chips
     parameters = {
         "current_card":current_card,
         "chips":request.session['chips'],
-        "player_cards":["../static/CardgameDjangoApp/images/cards/Clovers/2-clover.png","../static/CardgameDjangoApp/images/cards/Clovers/3-clover.png"]
     }
     return render(request, "blackjack.html",parameters)
 
