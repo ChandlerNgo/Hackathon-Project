@@ -174,6 +174,17 @@ def main():
                     for num in range(5):
                         player_one_cards.append(player_one.remove_one())
                         player_two_cards.append(player_two.remove_one())
+
+        print("\nPlayers chips total:", players_chips.total)
+        
+        new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
+        
+        if new_game[0].lower()=='y':
+            playing = True
+            continue
+        else:
+            print("Thanks for playing!")
+            break
             
 
 
